@@ -1,17 +1,23 @@
-# flutter_journal
+# どうぶつ日和 — JSON + MVC
 
-A new Flutter project.
+FlutterでJSONから投稿を読み込み、一覧表示する練習アプリです。12件のどうぶつ日記をGitHub Pagesから取得します。
 
-## Getting Started
+## 実行
 
-This project is a starting point for a Flutter application.
+```bash
+flutter pub get
+flutter run -d chrome
+```
 
-A few resources to get you started if this is your first Flutter project:
+## 投稿JSON
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+公開URL: <https://kmcsena.github.io/journal-animal-posts/posts.json>
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+各投稿は `emoji`、`user`、`text` の3項目で構成します。ローカルのコピーは `assets/posts.json` にあります。
+
+## MVCの役割
+
+- `lib/model.dart`: HTTPでJSONを取得して投稿データに変換
+- `lib/controller.dart`: 投稿一覧を保持
+- `lib/view.dart`: 投稿一覧を画面に表示
+- `lib/post.dart`: 投稿1件分のデータ
