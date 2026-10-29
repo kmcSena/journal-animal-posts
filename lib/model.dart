@@ -6,7 +6,7 @@ import 'post.dart';
 
 Future<List<Post>> loadPosts() async {
   final url = Uri.parse(
-    'https://kmcsena.github.io/journal-animal-posts/posts.json',
+    'https://kmcsena.github.io/journal-animal-posts/posts.json?v=7f638ff',
   );
   final response = await http.get(url);
   if (response.statusCode != 200) {
